@@ -15,4 +15,12 @@ We want to meet a certain standard when developing and deploying services.
     * For other branches: tag=`<branch>-<GIT_SHA>`
 * Helm chart in service repsitory
 * HelmRelease in gitops repository
+    * For `master` branch use
+        ```
+        flux.weave.works/tag.chart-image: "semver:~1.0.0"
+        ```
+    * For other branches use
+        ```
+        flux.weave.works/tag.chart-image: "glob:<branchname>-*"
+        ```
 * Secret templates in GitOps repository
