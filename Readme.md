@@ -14,7 +14,7 @@ We want to meet a certain standard when developing and deploying services.
     * For `master` branch: tag=`1.0.0-<buildNumber>`
     * For other branches: tag=`<branch>-<GIT_SHA>`
 * Helm chart in service repsitory
-* HelmRelease in gitops repository
+* HelmRelease in [gitops repository](https://github.com/actano/rplan-gitops)
     * For `master` branch use
         ```
         flux.weave.works/tag.chart-image: "semver:~1.0.0"
