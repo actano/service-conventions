@@ -24,3 +24,8 @@ We want to meet a certain standard when developing and deploying services.
         flux.weave.works/tag.chart-image: "glob:<branchname>-*"
         ```
 * Secret templates in GitOps repository
+
+## SemVer for production
+
+We are making use of [semantic versioning](https://semver.org/) to have a strictly monotonically increasing number as the Docker image tag.
+This enables us to revert to older versions because this will still create new image tags.
