@@ -1,0 +1,41 @@
+library 'jenkins-k8s-pipeline-scripts'
+
+final imageName = ''
+
+pipeline {
+  agent {
+    label "jenkins-nodejs"
+  }
+  stages {
+    stage('Build') {
+      steps {
+        ansiColor('xterm') {
+          container('nodejs') {
+            sh "yarn install"
+            sh "yarn build"
+          }
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        ansiColor('xterm') {
+          container('nodejs') {
+            sh "CI=true yarn test:all"
+          }
+        }
+      }
+    }
+    stage('Push Image') {
+      steps {
+        ansiColor('xterm') {
+          container('nodejs') {
+            script {
+              buildAndPush(imageName)
+            }
+          }
+        }
+      }
+    }
+  }
+}

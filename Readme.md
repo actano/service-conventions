@@ -29,3 +29,10 @@ We want to meet a certain standard when developing and deploying services.
 
 We are making use of [semantic versioning](https://semver.org/) to have a strictly monotonically increasing number as the Docker image tag.
 This enables us to revert to older versions because this will still create new image tags.
+
+## Templates
+
+The [service-template](./service-template) directory contains templates to get a starting point for
+introducing a new service:
+* [Jenkinsfile-k8s](./service-template/Jenkinsfile-k8s)
+* [Dockerfile](./service-template/Dockerfile)
