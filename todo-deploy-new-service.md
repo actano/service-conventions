@@ -13,3 +13,4 @@ This guide roughly explains how to get your service up and running.
 * Look at the existing `HelmRelease` configurations. Create a new branch to add your `HelmRelease` resource.
 * Push your branch and create a pull request describing why you did those changes.
 * Once the PR is merged, you should see your service running in the cluster.
+* If something is not working, connect to the cluster and look at the resources. [Here's a good introduction to that topic](https://developer.ibm.com/tutorials/debug-and-log-your-kubernetes-app/)
