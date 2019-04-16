@@ -2,6 +2,10 @@
 
 We want to meet a certain standard when developing and deploying services.
 
+## Nodejs
+
+We use nodejs LTS version 10.
+
 ## Requirements
 
 In order to deploy anything to Kubernetes, it needs to be packaged in a docker image.
