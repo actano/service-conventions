@@ -45,6 +45,12 @@ It should contain [Ambassador mapping annotation](https://www.getambassador.io/r
 We are making use of [semantic versioning](https://semver.org/) to have a strictly monotonically increasing number as the Docker image tag.
 This enables us to revert to older versions because this will still create new image tags.
 
+## Git hooks 
+
+* Do not enforce git hooks. 
+* Optional git hooks are fine.
+* The ci system is testing everything anyway, so git hooks should be an individual developer settings.
+
 ## Templates
 
 The [service-template](./service-template) directory contains templates to get a starting point for
