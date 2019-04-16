@@ -15,7 +15,7 @@ It should contain [Ambassador mapping annotation](https://www.getambassador.io/r
 
 ## Infrastructure conventions
 
-* Write a `Dockerfile` (Docker 17.03 - currently no multi-stage support)
+* Write a `Dockerfile`
 * Write a `Jenkinsfile-k8s` (see [jenkins-k8s](https://github.com/actano/jenkins-k8s))
 * Artifact: Docker image
     * For `master` branch: tag=`1.0.0-<buildNumber>`
