@@ -4,7 +4,20 @@ We want to meet a certain standard when developing and deploying services.
 
 ## Nodejs
 
-We use nodejs LTS version 10.
+Don't use `babel-node` in production. Use `yarn` instead of `npm`.
+
+* We use nodejs LTS version 10.
+* Put code into a `src` directory
+* `yarn build` should build into a `lib` folder
+* `yarn lint` should lint all files
+* `yarn test` should execute all tests
+* `yarn test:unit` can execute all unit tests
+* `yarn test:rest-api` can execute all rest api tests
+* package.json `main` should point to `lib/index.js`
+* Private packages should have `private:true` in their package.json
+* `yarn start` should start the server by using the built code (production use)
+* `yarn start:dev` can be used to start the server from `src` with `babel-node`
+* `yarn start:watch` can be used to start the server from `src` with a filewatcher (such as `babel-watch`)
 
 ## Requirements
 
