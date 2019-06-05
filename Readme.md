@@ -49,6 +49,17 @@ It should contain [Ambassador mapping annotation](https://www.getambassador.io/r
 We are making use of [semantic versioning](https://semver.org/) to have a strictly monotonically increasing number as the Docker image tag.
 This enables us to revert to older versions because this will still create new image tags.
 
+## Versioning of the REST-API
+In order to support breaking changes, we will add versioning to our REST-API. 
+The details still have to be specified here.
+
+### General idea
+- A service will provide multiple versions of its REST-API. 
+- The requested API-version will be part of the URL.
+- If a service needs to make breaking changes to the REST-API, a new  API version should be provided.
+- Older/deprecated versions should still be supported for some time in order to allow a migration. 
+- At some point support for an older version will be dropped.
+
 ## Git hooks 
 
 * Do not enforce git hooks. 
