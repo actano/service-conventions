@@ -34,16 +34,10 @@ It should contain [Ambassador mapping annotation](https://www.getambassador.io/r
 
 * Write a `Dockerfile`
 * Write a `Jenkinsfile-k8s` (see [jenkins-k8s](https://github.com/actano/jenkins-k8s))
-* Artifact: Docker image
-    * For `master` branch: tag=`1.0.0-<buildNumber>`
-    * For other branches: tag=`<branch>-<GIT_SHA>`
+* Artifact: Docker image, image tag should be `<branch>-<GIT_SHA>`
 * Helm chart in service repository
 * HelmRelease in [gitops repository](https://github.com/actano/rplan-gitops)
-    * For `master` branch use
-        ```
-        flux.weave.works/tag.chart-image: "semver:~1.0.0"
-        ```
-    * For other branches use
+    * For automated releases, use
         ```
         flux.weave.works/tag.chart-image: "glob:<branchname>-*"
         ```
@@ -56,11 +50,6 @@ It should contain [Ambassador mapping annotation](https://www.getambassador.io/r
 * Use [actano eslint config](https://github.com/actano/javascript)
 * Expose `/health` endpoint which checks external dependencies (e.g. working database connection)
 * Expose `/metrics` endpoint (use [`prom-client`](https://www.npmjs.com/package/prom-client))
-
-## SemVer for production
-
-We are making use of [semantic versioning](https://semver.org/) to have a strictly monotonically increasing number as the Docker image tag.
-This enables us to revert to older versions because this will still create new image tags.
 
 ## Versioning of the REST-API
 In order to support breaking changes, we will add versioning to our REST-API. 
