@@ -45,11 +45,11 @@ It should contain [Ambassador mapping annotation](https://www.getambassador.io/r
 
 ## Application specific conventions
 
-* Use rplan logger module ([`@rplan/logger`](https://github.com/actano/rplan-logger)) for log output
+* Log in the bunyan JSON format. For node, you should use ([`@rplan/logger`](https://github.com/actano/rplan-logger))
 * Shut the server down gracefully by handling SIGTERM and SIGINT
 * Use [actano eslint config](https://github.com/actano/javascript)
 * Expose `/health` endpoint which checks external dependencies (e.g. working database connection)
-* Expose `/metrics` endpoint (use [`prom-client`](https://www.npmjs.com/package/prom-client))
+* Expose `/metrics` endpoint (for node, use [`prom-client`](https://www.npmjs.com/package/prom-client))
 
 ## Versioning of the REST-API
 In order to support breaking changes, we will add versioning to our REST-API. 
@@ -74,3 +74,5 @@ The [service-template](./service-template) directory contains templates to get a
 introducing a new service:
 * [Jenkinsfile-k8s](./service-template/Jenkinsfile-k8s)
 * [Dockerfile](./service-template/Dockerfile)
+
+These templates could outdate quickly though. To get a living standard, look into actual service repositories.
