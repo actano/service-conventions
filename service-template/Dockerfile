@@ -12,4 +12,5 @@ COPY .rplan-config.yml .rplan-config.yml
 
 EXPOSE 3000
 
-ENTRYPOINT ["yarn", "start"]
+# We can't use yarn here because of https://github.com/yarnpkg/yarn/issues/4667
+ENTRYPOINT ["node", "lib/server.js"]
