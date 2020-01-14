@@ -4,7 +4,7 @@ final imageName = ''
 
 pipeline {
   agent {
-    label "jenkins-nodejs"
+    label "jenkins-nodejs-12"
   }
   stages {
     stage('Build') {
