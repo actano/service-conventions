@@ -1,4 +1,4 @@
-library 'jenkins-k8s-pipeline-scripts'
+library 'jenkins-k8s-pipeline-scripts@v3'
 
 final imageName = ''
 
@@ -32,6 +32,7 @@ pipeline {
           container('nodejs') {
             script {
               buildAndPush(imageName)
+              scanImage(imageName)
             }
           }
         }
